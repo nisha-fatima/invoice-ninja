@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import FuseLoading from "@fuse/core/FuseLoading";
+import Divider from "@mui/material/Divider";
 import _ from "@lodash";
 import * as yup from "yup";
 import { Controller, useForm } from "react-hook-form";
@@ -128,13 +129,14 @@ const ContactForm = (props) => {
           )}
         />
 
-        <FormControl className="flex w-full" variant="outlined">
+        <FormControl className="flex w-full mt-32" variant="outlined">
           <InputLabel id="category-select-label">Groups</InputLabel>
           <Select
             labelId="category-select-label"
             id="category-select"
             label="Category"
-            className="mt-32"
+            placeholder="Groups"
+            value={""}
           >
             <MenuItem value="all">
               <em> All </em>
@@ -150,145 +152,113 @@ const ContactForm = (props) => {
           </Select>
         </FormControl>
 
+        <FormControl className="flex w-full mt-32" variant="outlined">
+          <InputLabel id="category-select-label">Users</InputLabel>
+          <Select
+            labelId="category-select-label"
+            id="category-select"
+            label="Category"
+            placeholder="Users"
+            value={""}
+          >
+            <MenuItem value="all">
+              <em> All </em>
+            </MenuItem>
+            {[
+              { slug: "ddd", title: "Abu Yousuf" },
+              { slug: "dddsss", title: "sander anga" },
+            ].map((category) => (
+              <MenuItem value={category.slug} key={category.slug}>
+                {category.title}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
         <Controller
           control={control}
-          name="title"
+          name="ID Number"
           render={({ field }) => (
             <TextField
               className="mt-32"
               {...field}
-              label="Title"
-              placeholder="Job title"
+              label="ID Number"
+              placeholder="ID Number"
               id="title"
               error={!!errors.title}
               helperText={errors?.title?.message}
               variant="outlined"
               fullWidth
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <FuseSvgIcon size={20}>
-                      heroicons-solid:briefcase
-                    </FuseSvgIcon>
-                  </InputAdornment>
-                ),
-              }}
             />
           )}
         />
 
         <Controller
           control={control}
-          name="company"
+          name="VAT Number"
           render={({ field }) => (
             <TextField
               className="mt-32"
               {...field}
-              label="Company"
-              placeholder="Company"
-              id="company"
-              error={!!errors.company}
-              helperText={errors?.company?.message}
+              label="VAT Number"
+              placeholder="VAT Number"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
               variant="outlined"
               fullWidth
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <FuseSvgIcon size={20}>
-                      heroicons-solid:office-building
-                    </FuseSvgIcon>
-                  </InputAdornment>
-                ),
-              }}
             />
           )}
         />
-        <Controller
-          control={control}
-          name="emails"
-          render={({ field }) => (
-            <ContactEmailSelector className="mt-32" {...field} />
-          )}
-        />
 
         <Controller
           control={control}
-          name="phoneNumbers"
-          render={({ field }) => (
-            <PhoneNumberSelector className="mt-32" {...field} />
-          )}
-        />
-
-        <Controller
-          control={control}
-          name="address"
+          name="Website"
           render={({ field }) => (
             <TextField
               className="mt-32"
               {...field}
-              label="Address"
-              placeholder="Address"
-              id="address"
-              error={!!errors.address}
-              helperText={errors?.address?.message}
+              label="Website"
+              placeholder="Website"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
               variant="outlined"
               fullWidth
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <FuseSvgIcon size={20}>
-                      heroicons-solid:location-marker
-                    </FuseSvgIcon>
-                  </InputAdornment>
-                ),
-              }}
             />
           )}
         />
+
         <Controller
           control={control}
-          name="birthday"
-          render={({ field }) => (
-            <DateTimePicker
-              {...field}
-              className="mt-8 mb-16 w-full"
-              clearable
-              showTodayButton
-              renderInput={(_props) => (
-                <TextField
-                  {..._props}
-                  className="mt-32"
-                  id="birthday"
-                  label="Birthday"
-                  type="date"
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="outlined"
-                  fullWidth
-                  InputProps={{
-                    startAdornment: (
-                      <InputAdornment position="start">
-                        <FuseSvgIcon size={20}>
-                          heroicons-solid:cake
-                        </FuseSvgIcon>
-                      </InputAdornment>
-                    ),
-                  }}
-                />
-              )}
-            />
-          )}
-        />
-        <Controller
-          control={control}
-          name="notes"
+          name="Phone"
           render={({ field }) => (
             <TextField
               className="mt-32"
               {...field}
-              label="Notes"
-              placeholder="Notes"
+              label="Phone"
+              placeholder="Phone"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Divider className="mt-10 mb-24" />
+        <Divider className="mt-10 mb-24" />
+
+        <Controller
+          control={control}
+          name="Public Notes"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="Public Notes"
+              placeholder="Public Notes"
               id="notes"
               error={!!errors.notes}
               helperText={errors?.notes?.message}
@@ -297,16 +267,524 @@ const ContactForm = (props) => {
               multiline
               minRows={5}
               maxRows={10}
-              InputProps={{
-                className: "max-h-min h-min items-start",
-                startAdornment: (
-                  <InputAdornment className="mt-16" position="start">
-                    <FuseSvgIcon size={20}>
-                      heroicons-solid:menu-alt-2
-                    </FuseSvgIcon>
-                  </InputAdornment>
-                ),
-              }}
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="Private Notes"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="Private Notes"
+              placeholder="Private Notes"
+              id="notes"
+              error={!!errors.notes}
+              helperText={errors?.notes?.message}
+              variant="outlined"
+              fullWidth
+              multiline
+              minRows={5}
+              maxRows={10}
+            />
+          )}
+        />
+
+        <FormControl className="flex w-full mt-32" variant="outlined">
+          <InputLabel id="category-select-label">Size</InputLabel>
+          <Select
+            labelId="category-select-label"
+            id="category-select"
+            label="Category"
+            placeholder="Size"
+            value={""}
+          >
+            {[
+              { slug: "ddd", title: "1 - 3" },
+              { slug: "dddsss", title: "4 - 10" },
+              { slug: "ddd", title: "11 - 50" },
+              { slug: "dddsss", title: "51 - 100" },
+              { slug: "ddd", title: "101 - 500" },
+              { slug: "dddsss", title: "500+" },
+            ].map((category) => (
+              <MenuItem value={category.slug} key={category.slug}>
+                {category.title}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
+        <Controller
+          control={control}
+          name="Industry"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="Industry"
+              placeholder="Industry"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Divider className="mt-10 mb-24" />
+        <Divider className="mt-10 mb-24" />
+
+        <Controller
+          control={control}
+          name="First Name"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="First Name"
+              placeholder="First Name"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="Last Name"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="Last Name"
+              placeholder="Last Name"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="Email"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="Email"
+              placeholder="Email"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="Phone"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="Phone"
+              placeholder="Phone"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Divider className="mt-10 mb-24" />
+        <Divider className="mt-10 mb-24" />
+
+        <FormControl className="flex w-full mt-32" variant="outlined">
+          <InputLabel id="category-select-label">Currency</InputLabel>
+          <Select
+            labelId="category-select-label"
+            id="category-select"
+            label="Category"
+            placeholder="Currency"
+            value={""}
+          >
+            <MenuItem value="all">
+              <em> All </em>
+            </MenuItem>
+            {[
+              { slug: "ddd", title: "USD" },
+              { slug: "dddsss", title: "EURO" },
+            ].map((category) => (
+              <MenuItem value={category.slug} key={category.slug}>
+                {category.title}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
+        <FormControl className="flex w-full mt-32" variant="outlined">
+          <InputLabel id="category-select-label">Language</InputLabel>
+          <Select
+            labelId="category-select-label"
+            id="category-select"
+            label="Category"
+            placeholder="Language"
+            value={""}
+          >
+            <MenuItem value="all">
+              <em> All </em>
+            </MenuItem>
+            {[
+              { slug: "ddd", title: "ENGLISH" },
+              { slug: "dddsss", title: "URDU" },
+            ].map((category) => (
+              <MenuItem value={category.slug} key={category.slug}>
+                {category.title}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
+        <FormControl className="flex w-full mt-32" variant="outlined">
+          <InputLabel id="category-select-label">
+            Invoive Payments Terms
+          </InputLabel>
+          <Select
+            labelId="category-select-label"
+            id="category-select"
+            label="Category"
+            placeholder="Invoive Payments Terms"
+            value={""}
+          >
+            <MenuItem value="all">
+              <em> All </em>
+            </MenuItem>
+            {[
+              { slug: "ddd", title: "Net 0" },
+              { slug: "dddsss", title: "Net 4" },
+              { slug: "ddd", title: "Net 7" },
+              { slug: "dddsss", title: "Net 14" },
+              { slug: "ddd", title: "Net 30" },
+              { slug: "dddsss", title: "Net 60" },
+            ].map((category) => (
+              <MenuItem value={category.slug} key={category.slug}>
+                {category.title}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
+        <FormControl className="flex w-full mt-32" variant="outlined">
+          <InputLabel id="category-select-label">Quote Valid Until</InputLabel>
+          <Select
+            labelId="category-select-label"
+            id="category-select"
+            label="Category"
+            placeholder="Quote Valid Until"
+            value={""}
+          >
+            <MenuItem value="all">
+              <em> All </em>
+            </MenuItem>
+            {[
+              { slug: "ddd", title: "Net 0" },
+              { slug: "dddsss", title: "Net 4" },
+              { slug: "ddd", title: "Net 7" },
+              { slug: "dddsss", title: "Net 14" },
+              { slug: "ddd", title: "Net 30" },
+              { slug: "dddsss", title: "Net 60" },
+            ].map((category) => (
+              <MenuItem value={category.slug} key={category.slug}>
+                {category.title}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
+        <FormControl className="flex w-full mt-32" variant="outlined">
+          <InputLabel id="category-select-label">Task Rate</InputLabel>
+          <Select
+            labelId="category-select-label"
+            id="category-select"
+            label="Category"
+            placeholder="Task Rate"
+            value={""}
+          >
+            <MenuItem value="all">
+              <em> All </em>
+            </MenuItem>
+            {[
+              { slug: "ddd", title: "4dd" },
+              { slug: "dddsss", title: "4ddss" },
+            ].map((category) => (
+              <MenuItem value={category.slug} key={category.slug}>
+                {category.title}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
+        <FormControl className="flex w-full mt-32" variant="outlined">
+          <InputLabel id="category-select-label">Send Reminders</InputLabel>
+          <Select
+            labelId="category-select-label"
+            id="category-select"
+            label="Category"
+            placeholder="Send Reminders"
+            value={""}
+          >
+            <MenuItem value="all">
+              <em> All </em>
+            </MenuItem>
+            {[
+              { slug: "ddd", title: "Enabled" },
+              { slug: "dddsss", title: "Disabled" },
+            ].map((category) => (
+              <MenuItem value={category.slug} key={category.slug}>
+                {category.title}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
+        <Divider className="mt-10 mb-24" />
+        <Divider className="mt-10 mb-24" />
+
+        <Controller
+          control={control}
+          name="Billing Street"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="Billing Street"
+              placeholder="Billing Street"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="Apt/Suite"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="Apt/Suite"
+              placeholder="Apt/Suite"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="City"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="City"
+              placeholder="City"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="State/Province"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="State/Province"
+              placeholder="State/Province"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="Postal Code"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="Postal Code"
+              placeholder="Postal Code"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <FormControl className="flex w-full mt-32" variant="outlined">
+          <InputLabel id="category-select-label">Country</InputLabel>
+          <Select
+            labelId="category-select-label"
+            id="category-select"
+            label="Category"
+            placeholder="Country"
+            value={""}
+          >
+            <MenuItem value="all">
+              <em> All </em>
+            </MenuItem>
+            {[
+              { slug: "ddd", title: "Algeria" },
+              { slug: "dddsss", title: "Pakistan" },
+              { slug: "ddd", title: "Netherlands" },
+              { slug: "dddsss", title: "Spain" },
+            ].map((category) => (
+              <MenuItem value={category.slug} key={category.slug}>
+                {category.title}
+              </MenuItem>
+            ))}
+          </Select>
+        </FormControl>
+
+        <Divider className="mt-10 mb-24" />
+        <Divider className="mt-10 mb-24" />
+
+        <Controller
+          control={control}
+          name="Shipping Street"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="Shipping Street"
+              placeholder="Shipping Street"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="Apt/Suite"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="Apt/Suite"
+              placeholder="Apt/Suite"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="City"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="City"
+              placeholder="City"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="State/Province"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="State/Province"
+              placeholder="State/Province"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="Postal Code"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="Postal Code"
+              placeholder="Postal Code"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
+            />
+          )}
+        />
+
+        <Controller
+          control={control}
+          name="Country"
+          render={({ field }) => (
+            <TextField
+              className="mt-32"
+              {...field}
+              label="Country"
+              placeholder="Country"
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
+              variant="outlined"
+              fullWidth
             />
           )}
         />
