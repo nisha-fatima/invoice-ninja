@@ -8,7 +8,7 @@ import { TabContext } from "@mui/lab";
 import TabList from "@mui/lab/TabList";
 import Button from "@mui/material/Button";
 import NavLinkAdapter from "@fuse/core/NavLinkAdapter";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import FuseLoading from "@fuse/core/FuseLoading";
@@ -85,17 +85,6 @@ const ContactView = () => {
         <Typography className="mb-5 text-4xl font-bold truncate">
           {contact.name}
         </Typography>
-        <div className="flex items-center mb-10 mr-28">
-          <Button
-            variant="contained"
-            color="secondary"
-            component={NavLinkAdapter}
-            to="edit"
-          >
-            <FuseSvgIcon size={20}>heroicons-outline:pencil-alt</FuseSvgIcon>
-            <span className="mx-8">Edit</span>
-          </Button>
-        </div>
       </div>
       <Box className="flex flex-wrap items-center justify-between">
         <TabContext value={value} className="mt-4">
@@ -152,96 +141,160 @@ const ContactView = () => {
         <>
           <div className="relative flex flex-col flex-auto items-center">
             <div className="w-full max-w-3xl">
-              <div className="flex justify-around mt-8">
-                <h3>
-                  Paid to Date <h2>$0.00</h2>
-                </h3>
-                <h3>
-                  Balance Due<h2>$0.00</h2>
-                </h3>
+              <div className="flex flex-col justify-center items-center w-full mt-8 p-32 shadow-contact">
+                <h1 className="font-extrabold">
+                  Let's do Business International BV
+                </h1>
+                <h6 className="mt-8">Bert van Duivendijk</h6>
               </div>
-              <Divider className="mt-10 mb-24" />
+
               <div className="flex flex-col space-y-32">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <FuseSvgIcon>person</FuseSvgIcon>
-                    <h3 className="ml-24 leading-6">sander anga</h3>
+                <div className="mt-[24px] p-32 shadow-contact">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <FuseSvgIcon>house</FuseSvgIcon>
+                      <h4 className="ml-10 leading-6">Contact info</h4>
+                    </div>
+                    <div className="flex items-center mb-10">
+                      <Button
+                        variant="contained"
+                        color="secondary"
+                        component={NavLinkAdapter}
+                        to="edit"
+                      >
+                        <FuseSvgIcon size={20}>
+                          heroicons-outline:pencil-alt
+                        </FuseSvgIcon>
+                        <span className="mx-8">Edit</span>
+                      </Button>
+                    </div>
                   </div>
-                  <FuseSvgIcon>double_arrow_right</FuseSvgIcon>
+                  <div className="border-bottom-contact w-full"></div>
+
+                  <div className="">
+                    <div className="flex mt-5">
+                      <p className="w-4/12 font-bold leading-loose text-normal">
+                        Company name
+                      </p>
+                      <p className="pl-12 font-inter font-medium leading-loose text-normal">
+                        Let's do business international BV
+                      </p>
+                    </div>
+                    <div className="flex mt-5">
+                      <p className="w-4/12 font-bold leading-loose text-normal">
+                        Name
+                      </p>
+                      <p className="pl-12 font-inter font-medium leading-loose text-normal">
+                        Bert van Duivendijk
+                      </p>
+                    </div>
+                    <div className="flex mt-5">
+                      <p className="w-4/12 font-bold leading-loose text-normal">
+                        Address
+                      </p>
+                      <p className="pl-12 w-8/12 font-inter font-medium leading-loose text-normal">
+                        Rudolf Nureyevstraat 29, 1326 TC Almere, The Netherlands
+                        <Link to="/" className="ml-4">Map</Link>
+                      </p>
+                    </div>
+                    <div className="flex mt-5">
+                      <p className="w-4/12 font-bold leading-loose text-normal">
+                        CoC number
+                      </p>
+                      <p className="pl-12 font-inter font-medium leading-loose text-normal">
+                        -
+                      </p>
+                    </div>
+                    <div className="flex mt-5">
+                      <p className="w-4/12 font-bold leading-loose text-normal">
+                        VAT number
+                      </p>
+                      <p className="pl-12 font-inter font-medium leading-loose text-normal">
+                        -
+                      </p>
+                    </div>
+                    <div className="flex mt-5">
+                      <p className="w-4/12 font-bold leading-loose text-normal">
+                        Phone number
+                      </p>
+                      <p className="pl-12 font-inter font-medium leading-loose text-normal">
+                        -
+                      </p>
+                    </div>
+                    <div className="flex mt-5">
+                      <p className="w-4/12 font-bold leading-loose text-normal">
+                        Customer id
+                      </p>
+                      <p className="pl-12 font-inter font-medium leading-loose text-normal">
+                        1
+                      </p>
+                    </div>
+                  </div>
                 </div>
-                <Divider className="mt-10 mb-24" />
-                <div className="flex items-center justify-between">
+                <div className="p-24 flex items-center justify-between shadow-contact">
                   <div className="flex items-center">
                     <FuseSvgIcon>contact_mail</FuseSvgIcon>
                     <h3 className="ml-24 leading-6">Invoices</h3>
                   </div>
-                  <FuseSvgIcon>double_arrow_right</FuseSvgIcon>
+                  2 Active
                 </div>
-                <Divider className="mt-10 mb-24" />
-                <div className="flex items-center justify-between">
+                
+                <div className="p-24 flex items-center justify-between shadow-contact">
                   <div className="flex items-center">
                     <FuseSvgIcon>schedule</FuseSvgIcon>
                     <h3 className="ml-24 leading-6">Tasks</h3>
                   </div>
-                  <FuseSvgIcon>double_arrow_right</FuseSvgIcon>
+                  2 Active
                 </div>
-                <Divider className="mt-10 mb-24" />
-                <div className="flex items-center justify-between">
+                
+                <div className="p-24 flex items-center justify-between shadow-contact">
                   <div className="flex items-center">
                     <FuseSvgIcon>request_page</FuseSvgIcon>
                     <h3 className="ml-24 leading-6">Expenses</h3>
                   </div>
-                  <FuseSvgIcon>double_arrow_right</FuseSvgIcon>
+                  2 Active
                 </div>
-                <Divider className="mt-10 mb-24" />
-                <div className="flex items-center justify-between">
+                
+                <div className="p-24 flex items-center justify-between shadow-contact">
                   <div className="flex items-center">
                     <FuseSvgIcon>credit_card</FuseSvgIcon>
                     <h3 className="ml-24 leading-6">Payments</h3>
                   </div>
-                  <FuseSvgIcon>double_arrow_right</FuseSvgIcon>
+                  2 Active
                 </div>
-                <Divider className="mt-10 mb-24" />
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center">
-                    <FuseSvgIcon>contact_page</FuseSvgIcon>
-                    <h3 className="ml-24 leading-6">Quotes</h3>
-                  </div>
-                  <FuseSvgIcon>double_arrow_right</FuseSvgIcon>
-                </div>
-                <Divider className="mt-10 mb-24" />
-                <div className="flex items-center justify-between">
+                
+                <div className="p-24 flex items-center justify-between shadow-contact">
                   <div className="flex items-center">
                     <FuseSvgIcon>description</FuseSvgIcon>
                     <h3 className="ml-24 leading-6">Credits</h3>
                   </div>
-                  <FuseSvgIcon>double_arrow_right</FuseSvgIcon>
+                  2 Active
                 </div>
-                <Divider className="mt-10 mb-24" />
-                <div className="flex items-center justify-between">
+                
+                <div className="p-24 flex items-center justify-between shadow-contact">
                   <div className="flex items-center">
                     <FuseSvgIcon>business_center</FuseSvgIcon>
                     <h3 className="ml-24 leading-6">Projects</h3>
                   </div>
-                  <FuseSvgIcon>double_arrow_right</FuseSvgIcon>
+                  2 Active
                 </div>
-                <Divider className="mt-10 mb-24" />
-                <div className="flex items-center justify-between">
+                
+                <div className="p-24 flex items-center justify-between shadow-contact">
                   <div className="flex items-center">
                     <FuseSvgIcon>restore_page</FuseSvgIcon>
-                    <h3 className="ml-24 leading-6">Recurring Invoices</h3>
+                    <h3 className="ml-24 leading-6">Notes</h3>
                   </div>
 
-                  <FuseSvgIcon>double_arrow_right</FuseSvgIcon>
+                  2 Active
                 </div>
-                <Divider className="mt-10 mb-24" />
-                <div className="flex items-center justify-between">
+                
+                <div className="p-24 flex items-center justify-between shadow-contact">
                   <div className="flex items-center">
                     <FuseSvgIcon>restore_page</FuseSvgIcon>
-                    <h3 className="ml-24 leading-6">Recurring Expenses</h3>
+                    <h3 className="ml-24 leading-6">Deals</h3>
                   </div>
 
-                  <FuseSvgIcon>double_arrow_right</FuseSvgIcon>
+                  2 Active
                 </div>
               </div>
             </div>
@@ -299,7 +352,7 @@ const ContactView = () => {
       </TabPanel>
       <TabPanel value={value} index={3}>
         <div className="flex flex-col space-y-32">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between shadow-contact">
             <div className="flex items-center">
               <FuseSvgIcon>group</FuseSvgIcon>
               <h3 className="ml-24 leading-6">
@@ -315,7 +368,7 @@ const ContactView = () => {
       </TabPanel>
       <TabPanel value={value} index={4}>
         <div className="flex flex-col space-y-32">
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between shadow-contact">
             <div className="flex items-center">
               <FuseSvgIcon>group</FuseSvgIcon>
               <h3 className="ml-24 leading-6">
