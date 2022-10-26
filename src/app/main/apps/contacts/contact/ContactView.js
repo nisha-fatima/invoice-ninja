@@ -37,37 +37,10 @@ const ContactView = () => {
 
   return (
     <>
-      <Box
-        className="relative w-full h-160 sm:h-192 px-32 sm:px-48"
-        sx={{
-          backgroundColor: 'background.default',
-        }}
-      >
-        {contact.background && (
-          <img
-            className="absolute inset-0 object-cover w-full h-full"
-            src={contact.background}
-            alt="user background"
-          />
-        )}
-      </Box>
       <div className="relative flex flex-col flex-auto items-center p-24 pt-0 sm:p-48 sm:pt-0">
         <div className="w-full max-w-3xl">
           <div className="flex flex-auto items-end -mt-64">
-            <Avatar
-              sx={{
-                borderWidth: 4,
-                borderStyle: 'solid',
-                borderColor: 'background.paper',
-                backgroundColor: 'background.default',
-                color: 'text.secondary',
-              }}
-              className="w-128 h-128 text-64 font-bold"
-              src={contact.avatar}
-              alt={contact.name}
-            >
               {contact.name.charAt(0)}
-            </Avatar>
             <div className="flex items-center ml-auto mb-4">
               <Button variant="contained" color="secondary" component={NavLinkAdapter} to="edit">
                 <FuseSvgIcon size={20}>heroicons-outline:pencil-alt</FuseSvgIcon>
