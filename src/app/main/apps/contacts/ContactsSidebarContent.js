@@ -8,7 +8,7 @@ function ContactsSidebarContent(props) {
   const dispatch = useDispatch();
 
   return (
-    <div className="flex flex-col flex-auto">
+    <div className="flex flex-col flex-auto w-full">
       <IconButton
         className="absolute top-0 right-0 my-16 z-10"
         sx={{ color: 'black' }}

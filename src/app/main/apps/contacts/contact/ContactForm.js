@@ -98,7 +98,7 @@ const ContactForm = (props) => {
 
   return (
     <>
-      <h3 className="mt-24 px-28 sm:px-48 font-bold">Client Info</h3>
+      <h3 className="mt-24 px-28 sm:px-48 font-bold text-center w-full">Client Info</h3>
       <div className="relative flex flex-col flex-auto items-center px-24 sm:px-48">
         <Controller
           control={control}
@@ -233,7 +233,7 @@ const ContactForm = (props) => {
             />
           )}
         />
-
+        <h3 className="mt-24 px-28 sm:px-48 font-bold">Notes</h3>
         <Controller
           control={control}
           name="Public Notes"
@@ -316,7 +316,7 @@ const ContactForm = (props) => {
             />
           )}
         />
-
+           <h3 className="mt-24 px-28 sm:px-48 font-bold">Personal Info</h3>
         <Controller
           control={control}
           name="First Name"
@@ -388,7 +388,7 @@ const ContactForm = (props) => {
             />
           )}
         />
-
+           <h3 className="mt-24 px-28 sm:px-48 font-bold">Payment Info</h3>
         <FormControl className="flex w-full mt-32" variant="outlined">
           <InputLabel id="category-select-label">Currency</InputLabel>
           <Select
@@ -531,6 +531,8 @@ const ContactForm = (props) => {
           </Select>
         </FormControl>
 
+
+        <h3 className="mt-24 px-28 sm:px-48 font-bold">Billing Info</h3>
         <Controller
           control={control}
           name="Billing Street"
@@ -645,6 +647,8 @@ const ContactForm = (props) => {
           </Select>
         </FormControl>
 
+
+        <h3 className="mt-24 px-28 sm:px-48 font-bold">Shipping Info</h3>
         <Controller
           control={control}
           name="Shipping Street"

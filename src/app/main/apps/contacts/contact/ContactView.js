@@ -142,10 +142,10 @@ const ContactView = () => {
           <div className="relative flex flex-col flex-auto items-center">
             <div className="w-full max-w-3xl">
               <div className="flex flex-col justify-center items-center w-full mt-8 p-32 shadow-contact">
-                <h1 className="font-extrabold">
+                <h1 className="font-extrabold  text-center">
                   Let's do Business International BV
                 </h1>
-                <h6 className="mt-8">Bert van Duivendijk</h6>
+                <h6 className="mt-8 text-center">Bert van Duivendijk</h6>
               </div>
 
               <div className="flex flex-col space-y-32">
