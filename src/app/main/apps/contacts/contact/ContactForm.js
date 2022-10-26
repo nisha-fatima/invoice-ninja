@@ -4,7 +4,6 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect } from "react";
 import FuseLoading from "@fuse/core/FuseLoading";
-import Divider from "@mui/material/Divider";
 import _ from "@lodash";
 import * as yup from "yup";
 import { Controller, useForm } from "react-hook-form";
@@ -235,8 +234,6 @@ const ContactForm = (props) => {
           )}
         />
 
-        <Divider className="mt-10 mb-24 bg-black" />
-
         <Controller
           control={control}
           name="Public Notes"
@@ -320,8 +317,6 @@ const ContactForm = (props) => {
           )}
         />
 
-        <Divider className="mt-10 mb-24 bg-black" />
-
         <Controller
           control={control}
           name="First Name"
@@ -393,8 +388,6 @@ const ContactForm = (props) => {
             />
           )}
         />
-
-        <Divider className="mt-10 mb-24 bg-black" />
 
         <FormControl className="flex w-full mt-32" variant="outlined">
           <InputLabel id="category-select-label">Currency</InputLabel>
@@ -538,7 +531,6 @@ const ContactForm = (props) => {
           </Select>
         </FormControl>
 
-        <Divider className="mt-10 mb-24 bg-black" />
         <Controller
           control={control}
           name="Billing Street"
@@ -652,8 +644,6 @@ const ContactForm = (props) => {
             ))}
           </Select>
         </FormControl>
-
-        <Divider className="mt-10 mb-24 bg-black" />
 
         <Controller
           control={control}
