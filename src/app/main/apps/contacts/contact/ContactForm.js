@@ -99,32 +99,22 @@ const ContactForm = (props) => {
 
   return (
     <>
-      <h3 className="mt-24 px-28 sm:px-48 font-bold">Create Client</h3>
+      <h3 className="mt-24 px-28 sm:px-48 font-bold">Client Info</h3>
       <div className="relative flex flex-col flex-auto items-center px-24 sm:px-48">
         <Controller
           control={control}
-          name="name"
+          name="Name"
           render={({ field }) => (
             <TextField
               className="mt-32"
               {...field}
               label="Name"
               placeholder="Name"
-              id="name"
-              error={!!errors.name}
-              helperText={errors?.name?.message}
+              id="title"
+              error={!!errors.title}
+              helperText={errors?.title?.message}
               variant="outlined"
-              required
               fullWidth
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <FuseSvgIcon size={20}>
-                      heroicons-solid:user-circle
-                    </FuseSvgIcon>
-                  </InputAdornment>
-                ),
-              }}
             />
           )}
         />
@@ -136,7 +126,6 @@ const ContactForm = (props) => {
             id="category-select"
             label="Category"
             placeholder="Groups"
-            value={""}
           >
             <MenuItem value="all">
               <em> All </em>
@@ -159,7 +148,6 @@ const ContactForm = (props) => {
             id="category-select"
             label="Category"
             placeholder="Users"
-            value={""}
           >
             <MenuItem value="all">
               <em> All </em>
@@ -247,8 +235,7 @@ const ContactForm = (props) => {
           )}
         />
 
-        <Divider className="mt-10 mb-24" />
-        <Divider className="mt-10 mb-24" />
+        <Divider className="mt-10 mb-24 bg-black" />
 
         <Controller
           control={control}
@@ -299,7 +286,6 @@ const ContactForm = (props) => {
             id="category-select"
             label="Category"
             placeholder="Size"
-            value={""}
           >
             {[
               { slug: "ddd", title: "1 - 3" },
@@ -334,8 +320,7 @@ const ContactForm = (props) => {
           )}
         />
 
-        <Divider className="mt-10 mb-24" />
-        <Divider className="mt-10 mb-24" />
+        <Divider className="mt-10 mb-24 bg-black" />
 
         <Controller
           control={control}
@@ -409,8 +394,7 @@ const ContactForm = (props) => {
           )}
         />
 
-        <Divider className="mt-10 mb-24" />
-        <Divider className="mt-10 mb-24" />
+        <Divider className="mt-10 mb-24 bg-black" />
 
         <FormControl className="flex w-full mt-32" variant="outlined">
           <InputLabel id="category-select-label">Currency</InputLabel>
@@ -419,7 +403,6 @@ const ContactForm = (props) => {
             id="category-select"
             label="Category"
             placeholder="Currency"
-            value={""}
           >
             <MenuItem value="all">
               <em> All </em>
@@ -442,7 +425,6 @@ const ContactForm = (props) => {
             id="category-select"
             label="Category"
             placeholder="Language"
-            value={""}
           >
             <MenuItem value="all">
               <em> All </em>
@@ -467,7 +449,6 @@ const ContactForm = (props) => {
             id="category-select"
             label="Category"
             placeholder="Invoive Payments Terms"
-            value={""}
           >
             <MenuItem value="all">
               <em> All </em>
@@ -494,7 +475,6 @@ const ContactForm = (props) => {
             id="category-select"
             label="Category"
             placeholder="Quote Valid Until"
-            value={""}
           >
             <MenuItem value="all">
               <em> All </em>
@@ -521,7 +501,6 @@ const ContactForm = (props) => {
             id="category-select"
             label="Category"
             placeholder="Task Rate"
-            value={""}
           >
             <MenuItem value="all">
               <em> All </em>
@@ -544,7 +523,6 @@ const ContactForm = (props) => {
             id="category-select"
             label="Category"
             placeholder="Send Reminders"
-            value={""}
           >
             <MenuItem value="all">
               <em> All </em>
@@ -560,9 +538,7 @@ const ContactForm = (props) => {
           </Select>
         </FormControl>
 
-        <Divider className="mt-10 mb-24" />
-        <Divider className="mt-10 mb-24" />
-
+        <Divider className="mt-10 mb-24 bg-black" />
         <Controller
           control={control}
           name="Billing Street"
@@ -660,7 +636,6 @@ const ContactForm = (props) => {
             id="category-select"
             label="Category"
             placeholder="Country"
-            value={""}
           >
             <MenuItem value="all">
               <em> All </em>
@@ -678,8 +653,7 @@ const ContactForm = (props) => {
           </Select>
         </FormControl>
 
-        <Divider className="mt-10 mb-24" />
-        <Divider className="mt-10 mb-24" />
+        <Divider className="mt-10 mb-24 bg-black" />
 
         <Controller
           control={control}
