@@ -35,7 +35,7 @@ const FusePageSimpleSidebar = forwardRef((props, ref) => {
           classes={{
             root: clsx('FusePageSimple-sidebarWrapper', variant),
             paper: clsx(
-              'FusePageSimple-sidebar w-full',
+              'FusePageSimple-sidebar',
               variant,
               position === 'left' ? 'FusePageSimple-leftSidebar' : 'FusePageSimple-rightSidebar'
             ),

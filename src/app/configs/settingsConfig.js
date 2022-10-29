@@ -9,17 +9,17 @@ const settingsConfig = {
   customScrollbars: true,
   direction: i18n.dir(i18n.options.lng) || 'ltr', // rtl, ltr
   theme: {
-    main: themesConfig.default,
-    navbar: themesConfig.defaultDark,
-    toolbar: themesConfig.default,
-    footer: themesConfig.defaultDark,
+    main: themesConfig.light12,
+    navbar: themesConfig.light12,
+    toolbar: themesConfig.dark8,
+    footer: themesConfig.dark1,
   },
   /*
    To make whole app auth protected by default set defaultAuth:['admin','staff','user']
    To make whole app accessible without authorization by default set defaultAuth: null
    *** The individual route configs which has auth option won't be overridden.
    */
-  defaultAuth: ['admin'],
+  defaultAuth: ['admin', 'staff', 'user'],
   /*
     Default redirect url for the logged-in user,
    */

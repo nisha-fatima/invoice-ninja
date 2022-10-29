@@ -30,10 +30,7 @@ function ToolbarLayout1(props) {
         className={clsx('flex relative z-20 shadow-md', props.className)}
         color="default"
         sx={{
-          backgroundColor: (theme) =>
-            theme.palette.mode === 'light'
-              ? toolbarTheme.palette.background.paper
-              : toolbarTheme.palette.background.default,
+          backgroundColor: 'white',
         }}
         position="static"
       >

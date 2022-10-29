@@ -466,20 +466,20 @@ const themesConfig = {
       divider: '#e2e8f0',
       text: lightPaletteText,
       primary: {
-        light: '#FFFAF6',
-        main: '#FFEDE2',
-        dark: '#FFE0CF',
+        light: '#FFFFFF',
+        main: '#FFFFFF',
+        dark: '#FFFFFF',
         contrastText: lightPaletteText.primary,
       },
       secondary: {
-        light: '#DBD8F7',
-        main: '#887CE3',
-        dark: '#584CD0',
+        light: '#1975d2',
+        main: '#1975d2',
+        dark: '#1975d2',
         contrastText: darkPaletteText.primary,
       },
       background: {
         paper: '#FFFFFF',
-        default: '#FCF8F5',
+        default: '#FFFFFF',
       },
       error: {
         light: '#ffcdd2',
@@ -497,20 +497,20 @@ const themesConfig = {
       divider: 'rgba(241,245,249,.12)',
       text: darkPaletteText,
       primary: {
-        light: '#C2C2C3',
-        main: '#323338',
-        dark: '#131417',
+        light: '#FFFFFF',
+        main: '#3f9e1a',
+        dark: '#3f9e1a',
         contrastText: darkPaletteText.primary,
       },
       secondary: {
-        light: '#B8E1D9',
-        main: '#129B7F',
-        dark: '#056D4F',
+        light: '#1975d2',
+        main: '#1975d2',
+        dark: '#1975d2',
         contrastText: darkPaletteText.primary,
       },
       background: {
-        paper: '#262526',
-        default: '#1E1D1E',
+        paper: '#dfdede',
+        default: '#dfdede',
       },
       error: {
         light: '#ffcdd2',
@@ -721,13 +721,13 @@ const themesConfig = {
       },
       secondary: {
         light: '#CBD7FE',
-        main: '#5079FC',
+        main: '#FFFFFF',
         dark: '#2749FA',
         contrastText: darkPaletteText.primary,
       },
       background: {
-        paper: '#2D3159',
-        default: '#202441',
+        paper: '#1975d2',
+        default: '#1975d2',
       },
       error: {
         light: '#ffcdd2',

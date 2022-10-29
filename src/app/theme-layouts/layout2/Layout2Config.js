@@ -1,16 +1,17 @@
 const config = {
-  title: 'Layout 2 - Horizontal',
+  title: 'Layout 1 - Vertical',
   defaults: {
-    mode: 'container',
-    containerWidth: 1120,
+    mode: 'fullwidth',
+    containerWidth: 1570,
     navbar: {
       display: true,
-      style: 'fixed',
+      style: 'style-1',
+      folded: true,
+      position: 'left',
     },
     toolbar: {
       display: true,
-      style: 'static',
-      position: 'below',
+      style: 'fixed',
     },
     footer: {
       display: true,
@@ -46,33 +47,10 @@ const config = {
       title: 'Container Width (px)',
       type: 'number',
     },
+
     navbar: {
       type: 'group',
       title: 'Navbar',
-      children: {
-        display: {
-          title: 'Display',
-          type: 'switch',
-        },
-        style: {
-          title: 'Style',
-          type: 'radio',
-          options: [
-            {
-              name: 'Fixed',
-              value: 'fixed',
-            },
-            {
-              name: 'Static',
-              value: 'static',
-            },
-          ],
-        },
-      },
-    },
-    toolbar: {
-      type: 'group',
-      title: 'Toolbar',
       children: {
         display: {
           title: 'Display',
@@ -83,14 +61,50 @@ const config = {
           type: 'radio',
           options: [
             {
-              name: 'Above',
-              value: 'above',
+              name: 'Left',
+              value: 'left',
             },
             {
-              name: 'Below',
-              value: 'below',
+              name: 'Right',
+              value: 'right',
             },
           ],
+        },
+        style: {
+          title: 'Style',
+          type: 'radio',
+          options: [
+            {
+              name: 'Slide (style-1)',
+              value: 'style-1',
+            },
+            {
+              name: 'Folded (style-2)',
+              value: 'style-2',
+            },
+            {
+              name: 'Tabbed (style-3)',
+              value: 'style-3',
+            },
+            {
+              name: 'Tabbed Dense (style-3-dense)',
+              value: 'style-3-dense',
+            },
+          ],
+        },
+        folded: {
+          title: 'Folded (style-2, style-3)',
+          type: 'switch',
+        },
+      },
+    },
+    toolbar: {
+      type: 'group',
+      title: 'Toolbar',
+      children: {
+        display: {
+          title: 'Display',
+          type: 'switch',
         },
         style: {
           title: 'Style',
